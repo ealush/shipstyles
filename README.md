@@ -1,23 +1,40 @@
-# FlairUp 🎩
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/svg/shipstyles-lockup-horizontal-white.svg">
+  <img src="brand/svg/shipstyles-lockup-horizontal.svg" alt="ShipStyles" width="320">
+</picture>
 
-Lightweight CSS-in-JS library for UI packages.
-Battle tested on [Emoji-Picker-React](https://github.com/ealush/emoji-picker-react).
+Ship styled UI packages without CSS imports or bundler setup.
 
-FlairUp lets package authors ship styles with their package with zero config:
-it injects a `<style>` tag at runtime, so consumers never have to import
-stylesheets or configure bundlers. It works in the browser, in Shadow DOM,
-and with SSR.
+[![npm version](https://img.shields.io/npm/v/shipstyles.svg)](https://www.npmjs.com/package/shipstyles)
+[![CI](https://github.com/ealush/shipstyles/actions/workflows/test.yml/badge.svg)](https://github.com/ealush/shipstyles/actions)
+[![license](https://img.shields.io/github/license/ealush/shipstyles.svg)](LICENSE)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/shipstyles.svg)](https://bundlephobia.com/package/shipstyles)
+[![TypeScript](https://img.shields.io/npm/types/shipstyles.svg)](https://www.npmjs.com/package/shipstyles)
+
+## Why ShipStyles?
+
+Applications can dictate their stack; packages cannot. A shared component
+must bring its styles along and behave in bundlers, frameworks, and server
+runtimes it has never seen:
+
+- **No consumer setup** — styles ship inside the JavaScript. No CSS files to
+  import, no bundler plugins to configure.
+- **No collisions** — every declaration becomes its own hashed, deduplicated
+  atomic class, scoped to your package.
+- **SSR from day one** — `sheet.getStyle()` returns the whole stylesheet as
+  a string; the client adopts the server tag instead of mounting a duplicate.
+- **Portable** — works in the browser, in Shadow DOM, and with CSP nonces.
 
 ## Installation
 
 ```bash
-npm install flairup
+npm install shipstyles
 ```
 
 ## Usage
 
 ```javascript
-import { createSheet, cx } from 'flairup';
+import { createSheet, cx } from 'shipstyles';
 
 const sheet = createSheet('MyComponent');
 
@@ -32,6 +49,26 @@ const styles = sheet.create({
 
 const Button = () => <button className={cx(styles.button)}>Hover Me</button>;
 ```
+
+## Environment support
+
+Browser, SSR, Shadow DOM, and CSP nonce environments. Ships ESM and CJS
+from the same package:
+
+```javascript
+import { createSheet, cx } from 'shipstyles'; // ESM
+const { createSheet, cx } = require('shipstyles'); // CJS
+```
+
+## Migrating from FlairUp
+
+Upgrading from the `flairup` package? See [MIGRATION.md](MIGRATION.md). The
+API and runtime styling behavior are unchanged.
+
+## Battle-tested
+
+ShipStyles is the continuation of FlairUp, which ships in production inside
+[Emoji-Picker-React](https://github.com/ealush/emoji-picker-react).
 
 ## What `create()` returns
 
@@ -271,7 +308,7 @@ const styles = sheet.create({
       color: 'blue',
     },
     '::before': {
-      content: '🎩',
+      content: '•',
     },
   },
 });
@@ -314,8 +351,12 @@ Render the sheet's CSS into a style tag whose `id` matches the sheet
 that tag instead of mounting a duplicate, preserving the server CSS and
 appending only new rules:
 
+> ShipStyles 1.x intentionally retains the legacy `flairup-` style-tag
+> prefix for hydration compatibility. Treat the generated ID as an
+> implementation detail; it may change in a future major version.
+
 ```jsx
-import { createSheet } from 'flairup';
+import { createSheet } from 'shipstyles';
 
 const sheet = createSheet('MyComponent');
 
@@ -342,7 +383,7 @@ server tag (pure client render), the sheet mounts its own tag as usual.
 Given this input:
 
 ```javascript
-import { createSheet } from 'flairup';
+import { createSheet } from 'shipstyles';
 
 const sheet = createSheet('Button', null);
 

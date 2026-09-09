@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fira_Code, Source_Serif_4 } from "next/font/google";
 import "./styles.css";
 import { stylesheet } from "./stylesheet";
@@ -19,10 +19,34 @@ const code = Fira_Code({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#3292EA",
+};
+
 export const metadata: Metadata = {
-  title: "FlairUp — CSS-in-JS for packages that ship styles",
+  metadataBase: new URL("https://ealush.github.io"),
+  title: "ShipStyles — ship styled UI packages",
   description:
-    "FlairUp is a lightweight CSS-in-JS library for UI package authors: zero-config style shipping, bundler-agnostic output, scoped atomic classes, and built-in SSR support.",
+    "ShipStyles: ship styled UI packages without CSS imports or bundler setup. Scoped runtime styles for component libraries, with deterministic composition, SSR, Shadow DOM, and CSP support.",
+  alternates: {
+    canonical: "https://ealush.github.io/shipstyles",
+  },
+  // Relative URLs resolve against the document, so they work under both
+  // the root (Vercel) and the /shipstyles basePath (GitHub Pages) — this
+  // single-page site has no nested routes to break them. File-convention
+  // routes (opengraph-image.png) get their tags, with basePath, from Next
+  // automatically.
+  manifest: "site.webmanifest",
+  icons: {
+    icon: [{ url: "favicon.ico", type: "image/x-icon" }],
+    apple: [
+      {
+        url: "apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

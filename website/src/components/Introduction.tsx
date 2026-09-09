@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'flairup';
+import { cx } from 'shipstyles';
 import { stylesheet } from '../app/stylesheet';
 
 const styles = stylesheet.create({
@@ -63,7 +63,7 @@ const answers: Array<[string, string]> = [
   ],
   [
     'No build pipeline',
-    'FlairUp computes plain CSS at runtime and injects it once. It works under any bundler, or none.',
+    'ShipStyles computes plain CSS at runtime and injects it once. It works under any bundler, or none.',
   ],
   [
     'Scoped atomic classes',
@@ -92,10 +92,10 @@ export function Introduction() {
   return (
     <div>
       <p className={cx(styles.lede)}>
-        FlairUp is a CSS-in-JS library for UI package authors. Applications
+        ShipStyles is a CSS-in-JS library for UI package authors. Applications
         can dictate their stack; packages cannot — a shared component must
         bring its styles along and behave in bundlers, frameworks, and
-        server runtimes it has never seen. FlairUp is designed for exactly
+        server runtimes it has never seen. ShipStyles is designed for exactly
         that job.
       </p>
       <div className={cx(styles.grid)}>
@@ -104,7 +104,7 @@ export function Introduction() {
           <DefinitionList items={problems} />
         </div>
         <div>
-          <h3 className={cx(styles.groupTitle)}>How FlairUp answers</h3>
+          <h3 className={cx(styles.groupTitle)}>How ShipStyles answers</h3>
           <DefinitionList items={answers} />
         </div>
       </div>

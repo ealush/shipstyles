@@ -1,3 +1,3 @@
-import { createSheet } from "flairup";
+import { createSheet } from "shipstyles";
 
-export const stylesheet = createSheet("flairup", null);
+export const stylesheet = createSheet("shipstyles", null);

@@ -16,7 +16,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const fixtureRoot = mkdtempSync(join(tmpdir(), 'flairup-acceptance-'));
+const fixtureRoot = mkdtempSync(join(tmpdir(), 'shipstyles-acceptance-'));
 const packRoot = join(fixtureRoot, 'pack');
 mkdirSync(packRoot);
 
@@ -49,6 +49,7 @@ execFileSync(
 );
 
 test('published tarball contains runtime and declarations but no source/tests', () => {
+  assert.match(packed.filename, /^shipstyles-.*\.tgz$/);
   const paths = packed.files.map((file) => file.path);
   assert.ok(paths.includes('dist/index.js'));
   assert.ok(paths.includes('dist/esm/index.js'));
@@ -66,18 +67,18 @@ test('published tarball contains runtime and declarations but no source/tests', 
 
 test('CommonJS consumer can require and execute the packed package', () => {
   const requireFromFixture = createRequire(join(appRoot, 'consumer.cjs'));
-  const flairup = requireFromFixture('flairup');
-  const sheet = flairup.createSheet('packedCjs', null);
+  const shipstyles = requireFromFixture('shipstyles');
+  const sheet = shipstyles.createSheet('packedCjs', null);
   const styles = sheet.create({ box: { color: 'red' } });
 
-  assert.equal(typeof flairup.cx, 'function');
+  assert.equal(typeof shipstyles.cx, 'function');
   assert.equal(styles.box.size, 1);
   assert.match(sheet.getStyle(), /color:red/);
 });
 
 test('packed package preserves colliding precondition and postcondition identities', () => {
   const requireFromFixture = createRequire(join(appRoot, 'condition.cjs'));
-  const { createSheet } = requireFromFixture('flairup');
+  const { createSheet } = requireFromFixture('shipstyles');
   const sheet = createSheet('ruleKeyHashCollision', null);
   const preScope = 'ruleKeyHashCollision_9lyaan';
   const postScope = 'post1056';
@@ -104,7 +105,7 @@ test('packed package preserves colliding precondition and postcondition identiti
 
 test('ES module consumer can import and execute the packed package', () => {
   const script = [
-    "import { createSheet, cx } from 'flairup';",
+    "import { createSheet, cx } from 'shipstyles';",
     "const sheet = createSheet('packedEsm', null);",
     "const styles = sheet.create({ box: { color: 'red' } });",
     "if (!cx(styles.box) || !sheet.getStyle().includes('color:red')) process.exit(1);",
@@ -120,7 +121,7 @@ test('TypeScript consumer accepts the public API exposed by the tarball', () => 
   writeFileSync(
     join(appRoot, 'consumer.ts'),
     [
-      "import { createSheet, cx, type CreateSheetOptions } from 'flairup';",
+      "import { createSheet, cx, type CreateSheetOptions } from 'shipstyles';",
       "const options: CreateSheetOptions = { rootNode: null, nonce: 'nonce' };",
       "const sheet = createSheet('typed', options);",
       "const styles = sheet.create({ box: { color: 'red', ':hover': { color: 'blue' } } });",
@@ -158,7 +159,7 @@ test('Vite consumer bundles the packed package', () => {
   writeFileSync(
     join(appRoot, 'main.js'),
     [
-      "import { createSheet, cx } from 'flairup';",
+      "import { createSheet, cx } from 'shipstyles';",
       "const sheet = createSheet('packedVite');",
       "const styles = sheet.create({ app: { color: 'red' } });",
       "document.querySelector('#app').className = cx(styles.app);",
@@ -184,11 +185,33 @@ test('Vite consumer bundles the packed package', () => {
 test('package export paths point at files that were actually packed', () => {
   const packageJson = JSON.parse(
     readFileSync(
-      join(appRoot, 'node_modules', 'flairup', 'package.json'),
+      join(appRoot, 'node_modules', 'shipstyles', 'package.json'),
       'utf8',
     ),
   );
+  assert.equal(packageJson.name, 'shipstyles');
   assert.equal(packageJson.exports['.'].require.default, './dist/index.js');
   assert.equal(packageJson.exports['.'].import.default, './dist/esm/index.js');
   assert.equal(packageJson.exports['.'].import.types, './dist/index.d.ts');
+});
+
+test('no packed file imports or requires the legacy package name', () => {
+  const distRoot = join(appRoot, 'node_modules', 'shipstyles', 'dist');
+  const stack = [distRoot];
+  const offenders = [];
+  while (stack.length > 0) {
+    const entry = stack.pop();
+    for (const name of readdirSync(entry, { withFileTypes: true })) {
+      const full = join(entry, name.name);
+      if (name.isDirectory()) {
+        stack.push(full);
+      } else if (name.isFile() && full.endsWith('.js')) {
+        const source = readFileSync(full, 'utf8');
+        if (/(?:from\s+|require\()\s*['"]flairup['"]/.test(source)) {
+          offenders.push(full);
+        }
+      }
+    }
+  }
+  assert.deepEqual(offenders, []);
 });

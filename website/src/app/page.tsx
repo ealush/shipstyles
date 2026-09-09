@@ -1,6 +1,7 @@
 import React from 'react';
-import { cx } from 'flairup';
-import { createSheet } from 'flairup';
+import Image from 'next/image';
+import { cx } from 'shipstyles';
+import { createSheet } from 'shipstyles';
 import { SiteNav } from '../components/SiteNav';
 import { Sidebar } from '../components/Sidebar';
 import { Section } from '../components/Section';
@@ -39,6 +40,9 @@ const styles = sheet.create({
     '@media (min-width: 900px)': {
       gridTemplateColumns: '1.05fr 1fr',
     },
+  },
+  heroMark: {
+    marginBottom: '1.25rem',
   },
   eyebrow: {
     fontSize: '0.85rem',
@@ -144,18 +148,28 @@ function Hero() {
     <header className={cx(styles.hero)}>
       <div className={cx(styles.heroInner)}>
         <div>
-          <p className={cx(styles.eyebrow)}>CSS-in-JS for component packages</p>
+          <div className={cx(styles.heroMark)}>
+            <Image
+              src="brand/shipstyles-mark-white.svg"
+              alt=""
+              aria-hidden="true"
+              width={64}
+              height={64}
+              priority
+            />
+          </div>
+          <p className={cx(styles.eyebrow)}>Ship styled UI packages</p>
           <h1 className={cx(styles.title)}>
             Styles that ship with your components.
           </h1>
           <p className={cx(styles.lede)}>
-            FlairUp is a lightweight CSS-in-JS library for UI package authors.
-            No CSS files to import, no bundler plugins to configure — styles
-            travel inside the JavaScript and work in any app, any bundler,
-            and on the server.
+            ShipStyles ships styled UI packages without CSS imports or
+            bundler setup. Scoped runtime styles for component libraries,
+            with deterministic composition, SSR, Shadow DOM, and CSP
+            support. No consumer CSS import. No bundler plugin.
           </p>
           <div className={cx(styles.actions)}>
-            <code className={cx(styles.install)}>npm install flairup</code>
+            <code className={cx(styles.install)}>npm install shipstyles</code>
             <a href="#api" className={cx(styles.docsLink)}>
               Read the API reference
             </a>
@@ -190,9 +204,9 @@ function PageFooter() {
   return (
     <footer className={cx(styles.footer)}>
       <span>© {new Date().getFullYear()} ealush.</span>
-      <a href="https://github.com/ealush/flairup">GitHub</a>
-      <a href="https://www.npmjs.com/package/flairup">npm</a>
-      <span>This page is styled with FlairUp.</span>
+      <a href="https://github.com/ealush/shipstyles">GitHub</a>
+      <a href="https://www.npmjs.com/package/shipstyles">npm</a>
+      <span>This page is styled with ShipStyles.</span>
     </footer>
   );
 }
@@ -235,10 +249,10 @@ export default function Home() {
             kicker="04 · Install"
             title="Installation"
           >
-            <Code language="bash" label="Install FlairUp">
-              {`npm install flairup
+            <Code language="bash" label="Install ShipStyles">
+              {`npm install shipstyles
 # or
-yarn add flairup`}
+yarn add shipstyles`}
             </Code>
           </Section>
 
@@ -286,7 +300,7 @@ yarn add flairup`}
               sheet detached and read the CSS out as a string:
             </p>
             <Code language="typescript" label="SSR pattern">
-              {`import { createSheet } from 'flairup';
+              {`import { createSheet } from 'shipstyles';
 
 // null root: no <style> tag is touched, styles stay in memory
 const sheet = createSheet('my-package', null);
