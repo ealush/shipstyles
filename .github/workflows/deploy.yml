@@ -24,6 +24,16 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
+      - name: Install library dependencies
+        run: npm ci
+        working-directory: .
+
+      - name: Build library
+        # website/ depends on the local package (file:..), and dist/ is
+        # gitignored, so the library must be built before the site.
+        run: npm run build
+        working-directory: .
+
       - name: Install dependencies
         run: npm ci
 
