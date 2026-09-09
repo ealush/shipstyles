@@ -6,7 +6,7 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/flairup',
+  cacheDir: '../../node_modules/.vite/packages/shipstyles',
 
   plugins: [],
 
@@ -20,7 +20,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: './coverage/packages/flairup',
+      reportsDirectory: './coverage/packages/shipstyles',
       provider: 'v8',
     },
   },

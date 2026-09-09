@@ -16,18 +16,18 @@ export type CreateSheetOptions = {
   nonce?: string;
 };
 
-// That's the create function input. FlairUpProperties is part of the
+// That's the create function input. ShipStylesProperties is part of the
 // intersection (not just a top-level alternative) so scopes mixing plain
 // declarations with '--'/'.' blocks are accepted wherever Styles is: the
 // runtime supports those mixes at every nesting level.
 export type Styles = Partial<
-  StyleObject & Chunks & PostConditionStyles & FlairUpProperties
+  StyleObject & Chunks & PostConditionStyles & ShipStylesProperties
 >;
 
 export type PostConditionStyles = {
   [k: ConditionKey]:
     | StyleObject
-    | FlairUpProperties
+    | ShipStylesProperties
     | Chunks
     | PostConditionStyles;
 };
@@ -41,7 +41,7 @@ export {};
 
 export type DirectClass = string | string[];
 
-type FlairUpProperties = Partial<{
+type ShipStylesProperties = Partial<{
   '.'?: DirectClass;
   '--'?: CSSVariablesObject;
 }>;
@@ -54,7 +54,7 @@ type Chunks = {
 } & { [k: Pseudo]: StyleObject };
 
 export type CreateSheetInput<K extends string> = Partial<
-  { [k in K]: Styles | FlairUpProperties } | PreConditions<K>
+  { [k in K]: Styles | ShipStylesProperties } | PreConditions<K>
 >;
 
 export type PreConditions<K extends string> = {
