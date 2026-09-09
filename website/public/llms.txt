@@ -5,7 +5,7 @@ ShipStyles is a lightweight runtime styling library for UI package authors
 (React, Vue, framework-agnostic). Version documented here: 1.x.
 Repository: https://github.com/ealush/shipstyles
 Package: https://www.npmjs.com/package/shipstyles
-Docs: https://ealush.com/shipstyles
+Docs: https://ealush.com/shipstyles/
 
 ## When to use it
 

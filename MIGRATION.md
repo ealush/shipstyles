@@ -47,4 +47,4 @@ behavior, DOM mounting, and output semantics are identical.
 
 - Canonical repository: https://github.com/ealush/shipstyles
 - npm package: https://www.npmjs.com/package/shipstyles
-- Docs: https://ealush.com/shipstyles
+- Docs: https://ealush.com/shipstyles/
