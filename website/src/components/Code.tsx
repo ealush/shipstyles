@@ -3,8 +3,8 @@ import { cx } from 'shipstyles';
 import { stylesheet } from '../app/stylesheet';
 import { Highlight, type PrismTheme } from 'prism-react-renderer';
 
-// Warm code theme drawn from the site palette so samples sit in the
-// same color family as the page around them.
+// Cool code theme drawn from the brand palette so samples sit in the
+// same color family as the navy surfaces around them.
 const codeTheme: PrismTheme = {
   plain: {
     color: 'var(--code-fg)',
@@ -17,15 +17,15 @@ const codeTheme: PrismTheme = {
     },
     {
       types: ['punctuation', 'operator'],
-      style: { color: '#b3a58d' },
+      style: { color: '#7e96bc' },
     },
     {
       types: ['keyword', 'boolean', 'null', 'tag', 'important'],
-      style: { color: '#ec9aae' },
+      style: { color: '#8fbef7' },
     },
     {
       types: ['string', 'char', 'attr-value', 'regex'],
-      style: { color: '#d3bd8b' },
+      style: { color: '#9adbb5' },
     },
     {
       types: ['number', 'unit', 'symbol'],
@@ -33,11 +33,11 @@ const codeTheme: PrismTheme = {
     },
     {
       types: ['function', 'class-name', 'selector'],
-      style: { color: '#f2eada' },
+      style: { color: '#ffffff' },
     },
     {
       types: ['property', 'attr-name', 'parameter'],
-      style: { color: '#d9c6a5' },
+      style: { color: '#b9cdf2' },
     },
   ],
 };

@@ -158,15 +158,14 @@ function Hero() {
               priority
             />
           </div>
-          <p className={cx(styles.eyebrow)}>Ship styled UI packages</p>
+          <p className={cx(styles.eyebrow)}>Zero-config styling for UI packages</p>
           <h1 className={cx(styles.title)}>
             Styles that ship with your components.
           </h1>
           <p className={cx(styles.lede)}>
-            ShipStyles ships styled UI packages without CSS imports or
-            bundler setup. Scoped runtime styles for component libraries,
-            with deterministic composition, SSR, Shadow DOM, and CSP
-            support. No consumer CSS import. No bundler plugin.
+            Build scoped runtime styles into your library. Consumers
+            install and render — no CSS import, bundler plugin, or
+            framework-specific setup.
           </p>
           <div className={cx(styles.actions)}>
             <code className={cx(styles.install)}>npm install shipstyles</code>

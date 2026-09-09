@@ -43,7 +43,7 @@ const entries: Array<{ signature: string; text: string; sample?: string }> = [
     sample: `const styles = sheet.create({
   card: {
     padding: '16px',
-    '--accent': '#9c1a24',
+    '--accent': '#0a58ca',
     '&:hover': { borderColor: 'var(--accent)' },
     '@media (min-width: 700px)': { padding: '24px' },
   },

@@ -2,7 +2,7 @@
   "name": "shipstyles",
   "description": "Zero-config runtime styles for UI packages: ship scoped CSS without consumer imports or bundler setup.",
   "version": "1.0.0",
-  "homepage": "https://ealush.github.io/shipstyles",
+  "homepage": "https://ealush.com/shipstyles",
   "license": "MIT",
   "repository": {
     "type": "git",

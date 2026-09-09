@@ -6,24 +6,24 @@ import { Example } from '../components/Example';
 const exampleStyle = {
   '.theme-dark': {
     plan: {
-      backgroundColor: '#241c13',
-      borderColor: '#4a3f30',
-      color: '#f2eada',
+      backgroundColor: '#0a1730',
+      borderColor: '#1d3358',
+      color: '#ffffff',
     },
     planName: {
-      color: '#ec9aae',
+      color: '#8fbef7',
     },
     planPrice: {
-      color: '#f2eada',
+      color: '#ffffff',
     },
     planFeatures: {
-      color: '#c9bda6',
+      color: '#b9cdf2',
     },
     planButton: {
-      backgroundColor: '#ec9aae',
-      color: '#2a1216',
+      backgroundColor: '#3292ea',
+      color: '#04122e',
       '&:hover': {
-        backgroundColor: '#f6c2cf',
+        backgroundColor: '#5aa9f2',
       },
     },
   },

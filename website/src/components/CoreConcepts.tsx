@@ -108,11 +108,11 @@ const sheet = createSheet('my-package');
 const styles = sheet.create({
   button: {
     color: '#fff',
-    backgroundColor: '#9c1a24',
+    backgroundColor: '#0a58ca',
     padding: '10px 20px',
     borderRadius: '8px',
     '&:hover': {
-      backgroundColor: '#7e1420',
+      backgroundColor: '#084a9e',
     },
   },
   block: {
