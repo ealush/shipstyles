@@ -1,20 +1,21 @@
-# FlairUp
+# ShipStyles
 
-FlairUp is a lightweight CSS-in-JS library for UI package authors
-(React, Vue, framework-agnostic). Version documented here: 1.1.x.
-Repository: https://github.com/ealush/flairup
-Package: https://www.npmjs.com/package/flairup
-Docs: https://ealush.github.io/flairup
+Ship styled UI packages without CSS imports or bundler setup.
+ShipStyles is a lightweight runtime styling library for UI package authors
+(React, Vue, framework-agnostic). Version documented here: 1.x.
+Repository: https://github.com/ealush/shipstyles
+Package: https://www.npmjs.com/package/shipstyles
+Docs: https://ealush.github.io/shipstyles
 
 ## When to use it
 
-Use FlairUp when shipping reusable UI components whose styles must work
+Use ShipStyles when shipping reusable UI components whose styles must work
 without consumer setup: no CSS files to import, no bundler plugins, no
 framework-specific SSR handling. Not a general app-styling framework.
 
 ## Install
 
-npm install flairup
+npm install shipstyles
 
 ## API (five functions)
 

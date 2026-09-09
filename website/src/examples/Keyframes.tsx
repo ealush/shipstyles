@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'flairup';
+import { cx } from 'shipstyles';
 import { stylesheet } from '../app/stylesheet';
 import { Example } from '../components/Example';
 import { AnimationDemo, type LoadingDemo } from '../components/AnimationDemo';

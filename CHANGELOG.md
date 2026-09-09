@@ -1,3 +1,7 @@
+> Development continues as ShipStyles
+> ([ealush/shipstyles](https://github.com/ealush/shipstyles)). Entries below
+> are the preserved FlairUp history, with original links kept verbatim.
+
 ## [1.1.3](https://github.com/ealush/flairup/compare/v1.1.2...v1.1.3) (2026-09-07)
 
 ### Bug Fixes

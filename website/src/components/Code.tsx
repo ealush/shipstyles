@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'flairup';
+import { cx } from 'shipstyles';
 import { stylesheet } from '../app/stylesheet';
 import { Highlight, type PrismTheme } from 'prism-react-renderer';
 
