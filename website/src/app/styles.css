@@ -1,26 +1,31 @@
+/* Brand palette: ShipStyles Navy #071A39, Blue #3292EA, White #FFFFFF.
+   Text colors are picked against WCAG AA (>= 4.5:1 for body text):
+   navy body on paper ~16.8, #0A58CA links ~6.4, navy on blue buttons ~5.3,
+   white on navy hero ~17.3. */
 :root {
-  --paper: #fcfaf5;
-  --ink: #211c15;
-  --muted: #615849;
-  --line: #e3d8c4;
-  --card: #f6f1e6;
-  --accent: #9c1a24;
-  --accent-strong: #7e1420;
-  --btn-bg: #9c1a24;
-  --btn-fg: #ffffff;
-  --field-border: #8a7d68;
+  --paper: #fafcff;
+  --ink: #071a39;
+  --muted: #44597a;
+  --line: #d7e3f4;
+  --card: #edf3fc;
+  --accent: #0a58ca;
+  --accent-strong: #084a9e;
+  --btn-bg: #3292ea;
+  --btn-fg: #071a39;
+  --field-border: #8aa2c4;
   --tone-success: #237a4b;
   --tone-warning: #8a5a00;
-  --code-bg: #231d15;
-  --code-fg: #f2eada;
-  --code-comment: #a2937b;
-  --focus: #9c1a24;
-  --on-dark-fg: #f2eada;
-  --on-dark-muted: #a2937b;
-  --on-dark-accent: #ec9aae;
-  --on-dark-btn-bg: #ec9aae;
-  --on-dark-btn-fg: #2a1216;
-  --on-dark-panel: #171310;
+  --code-bg: #071a39;
+  --code-fg: #eaf1fc;
+  --code-comment: #8ca6cb;
+  --focus: #0a58ca;
+  /* Hero and code blocks sit on navy in both modes, so one set suffices. */
+  --on-dark-fg: #ffffff;
+  --on-dark-muted: #b9cdf2;
+  --on-dark-accent: #8fbef7;
+  --on-dark-btn-bg: #3292ea;
+  --on-dark-btn-fg: #04122e;
+  --on-dark-panel: #0a1730;
   --radius: 10px;
   --measure: 64rem;
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
@@ -29,19 +34,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #161210;
-    --ink: #ece2ce;
-    --muted: #b3a58d;
-    --line: #38302a;
-    --card: #211b14;
-    --accent: #ec9aae;
-    --accent-strong: #f6c2cf;
-    --btn-bg: #ec9aae;
-    --btn-fg: #2a1216;
-    --field-border: #6e6250;
+    --paper: #081426;
+    --ink: #e8f0fc;
+    --muted: #9db4d6;
+    --line: #1d3358;
+    --card: #0c1c38;
+    --accent: #7fb5f5;
+    --accent-strong: #abcdf9;
+    --btn-bg: #3292ea;
+    --btn-fg: #04122e;
+    --field-border: #33517f;
     --tone-success: #7fc79b;
     --tone-warning: #d9a93f;
-    --focus: #ec9aae;
+    --focus: #7fb5f5;
   }
 }
 

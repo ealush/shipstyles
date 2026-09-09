@@ -24,12 +24,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ealush.github.io"),
+  metadataBase: new URL("https://ealush.com"),
   title: "ShipStyles — ship styled UI packages",
   description:
     "ShipStyles: ship styled UI packages without CSS imports or bundler setup. Scoped runtime styles for component libraries, with deterministic composition, SSR, Shadow DOM, and CSP support.",
   alternates: {
-    canonical: "https://ealush.github.io/shipstyles",
+    canonical: "https://ealush.com/shipstyles/",
   },
   // Relative URLs resolve against the document, so they work under both
   // the root (Vercel) and the /shipstyles basePath (GitHub Pages) — this
