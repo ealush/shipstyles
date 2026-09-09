@@ -5,7 +5,7 @@ ShipStyles is a lightweight runtime styling library for UI package authors
 (React, Vue, framework-agnostic). Version documented here: 1.x.
 Repository: https://github.com/ealush/shipstyles
 Package: https://www.npmjs.com/package/shipstyles
-Docs: https://ealush.github.io/shipstyles
+Docs: https://ealush.com/shipstyles/
 
 ## When to use it
 
@@ -34,7 +34,7 @@ sheet.create(styles)
     const styles = sheet.create({
       card: {
         padding: '16px',
-        '--accent': '#9c1a24',
+        '--accent': '#0a58ca',
         '&:hover': { borderColor: 'var(--accent)' },
         '@media (min-width: 700px)': { padding: '24px' },
       },
@@ -42,10 +42,14 @@ sheet.create(styles)
 
 cx(...args)
   Combines class Sets, strings, arrays, and { className: boolean }
-  maps into one class string for className. Every class stays in the
-  output, so when two set the same property the stylesheet rule order
-  decides — one complete scope per visual state; cx() combines scopes
-  that set different properties.
+  maps into one class string for className. When classes conflict, the
+  last one passed to cx() wins — regardless of the order the styles were
+  created in. Conflicts resolve per context: the same property set
+  globally, under :hover, and under a media query never conflicts with
+  itself. Unknown classes pass through untouched, repeats are deduped.
+  Atomic shorthands that stay atomic (background, font, border, opaque
+  var() values) resolve as one unit, so give each visual state its own
+  complete scope instead of layering overrides.
   Example:
     cx(styles.card, isActive && styles.active, extraClass)
 

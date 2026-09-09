@@ -1,8 +1,8 @@
 1:"$Sreact.fragment"
 5:I[87180,["/shipstyles/_next/static/chunks/a0e533664789d2fa.js","/shipstyles/_next/static/chunks/e0f7cef4ba5f954b.js"],"default"]
 6:I[42045,["/shipstyles/_next/static/chunks/a0e533664789d2fa.js","/shipstyles/_next/static/chunks/e0f7cef4ba5f954b.js"],"default"]
-:HL["/shipstyles/_next/static/chunks/93b68bc445179c42.css","style"]
-2:T3dbb,.shipstyles_-6dchwm {position:sticky;}
+:HL["/shipstyles/_next/static/chunks/27839c63461d0a37.css","style"]
+2:T3dbe,.shipstyles_-6dchwm {position:sticky;}
 .shipstyles_1ttcuj {top:0;}
 .shipstyles_-z18wy2 {z-index:50;}
 .shipstyles_5odlxw {background-color:var(--paper);}
@@ -318,18 +318,18 @@
 .shipstyles_6mvfjy:disabled {cursor:not-allowed;}
 .shipstyles_xlmukh:hover {background-color:var(--accent-strong);}
 .shipstyles_-mw3fs8:active {transform:translateY(1px);}
-.theme-dark .shipstyles_lsafb9 {background-color:#241c13;}
-.theme-dark .shipstyles_-ruktu0 {border-top-color:#4a3f30;}
-.theme-dark .shipstyles_mea13l {border-right-color:#4a3f30;}
-.theme-dark .shipstyles_tasbpc {border-bottom-color:#4a3f30;}
-.theme-dark .shipstyles_-ybz7to {border-left-color:#4a3f30;}
-.theme-dark .shipstyles_dqmcqf {color:#f2eada;}
-.theme-dark .shipstyles_-k5grwz {color:#ec9aae;}
-.theme-dark .shipstyles_8zrkcv {color:#f2eada;}
-.theme-dark .shipstyles_-ud6vqc {color:#c9bda6;}
-.theme-dark .shipstyles_-um8a9s {background-color:#ec9aae;}
-.theme-dark .shipstyles_js3xvu {color:#2a1216;}
-.theme-dark .shipstyles_j5mf73:hover {background-color:#f6c2cf;}
+.theme-dark .shipstyles_-3gzph5 {background-color:#0a1730;}
+.theme-dark .shipstyles_-3p2tsx {border-top-color:#1d3358;}
+.theme-dark .shipstyles_-ohc0ug {border-right-color:#1d3358;}
+.theme-dark .shipstyles_-hktq8p {border-bottom-color:#1d3358;}
+.theme-dark .shipstyles_-a6h7sl {border-left-color:#1d3358;}
+.theme-dark .shipstyles_ls522k {color:#ffffff;}
+.theme-dark .shipstyles_-yizcln {color:#8fbef7;}
+.theme-dark .shipstyles_-ya5o5y {color:#ffffff;}
+.theme-dark .shipstyles_-5uasgr {color:#b9cdf2;}
+.theme-dark .shipstyles_-6qgq7q {background-color:#3292ea;}
+.theme-dark .shipstyles_stlh9p {color:#04122e;}
+.theme-dark .shipstyles_ri731:hover {background-color:#5aa9f2;}
 .shipstyles_ec665c {row-gap:12px;}
 .shipstyles_-awqbmk {column-gap:12px;}
 @media (min-width: 640px) {
@@ -379,6 +379,6 @@ to { opacity:1; }
 .shipstyles_rltkqw {background-color:var(--accent);}
 .shipstyles_5qqs5t {animation:shipstyles_2_bounce 1.2s ease-in-out infinite;}
 .shipstyles_-ru8y9b {animation-delay:0.15s;}
-.shipstyles_v6hswu {animation-delay:0.3s;}0:{"buildId":"0qdO2YKI6_lYoeSbRsq_A","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/shipstyles/_next/static/chunks/93b68bc445179c42.css","precedence":"next"}]],["$","html",null,{"lang":"en","className":"source_serif_4_6feac9d8-module__BVFyla__variable fira_code_24eb243e-module__mCjXYa__variable","children":["$","body",null,{"children":[["$","style",null,{"children":"$2"}],"$L3","$L4"]}]}]]}],"loading":null,"isPartial":false}
+.shipstyles_v6hswu {animation-delay:0.3s;}0:{"buildId":"jhuT_XsBlcv5h1nV48vyz","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/shipstyles/_next/static/chunks/27839c63461d0a37.css","precedence":"next"}]],["$","html",null,{"lang":"en","className":"source_serif_4_6feac9d8-module__BVFyla__variable fira_code_24eb243e-module__mCjXYa__variable","children":["$","body",null,{"children":[["$","style",null,{"children":"$2"}],"$L3","$L4"]}]}]]}],"loading":null,"isPartial":false}
 3:["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}]
 4:["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]
