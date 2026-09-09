@@ -308,7 +308,7 @@ const styles = sheet.create({
       color: 'blue',
     },
     '::before': {
-      content: '🎩',
+      content: '•',
     },
   },
 });
